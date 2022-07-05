@@ -15,6 +15,7 @@
 		DF02351328697F9A009E9C76 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02351228697F9A009E9C76 /* SearchView.swift */; };
 		DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02351428697FB9009E9C76 /* LibraryView.swift */; };
 		DF02351728697FE8009E9C76 /* ListenNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02351628697FE8009E9C76 /* ListenNowView.swift */; };
+		DF0C68EF28707FCC0015023E /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0C68EE28707FCC0015023E /* ArtistCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DF02351428697FB9009E9C76 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		DF02351628697FE8009E9C76 /* ListenNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenNowView.swift; sourceTree = "<group>"; };
 		DF023518286C29A3009E9C76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DF0C68EE28707FCC0015023E /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				DF02351028697F72009E9C76 /* RadioView.swift */,
 				DF02351428697FB9009E9C76 /* LibraryView.swift */,
 				DF02351228697F9A009E9C76 /* SearchView.swift */,
+				DF0C68EE28707FCC0015023E /* ArtistCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			files = (
 				DF02351328697F9A009E9C76 /* SearchView.swift in Sources */,
 				DF02351128697F72009E9C76 /* RadioView.swift in Sources */,
+				DF0C68EF28707FCC0015023E /* ArtistCell.swift in Sources */,
 				DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */,
 				DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */,
 				DF02351728697FE8009E9C76 /* ListenNowView.swift in Sources */,
