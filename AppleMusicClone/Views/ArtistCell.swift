@@ -37,18 +37,5 @@ struct ArtistCell: View {
             }
         }
         .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
-//                .onTapGesture {
-//                    /*
-//                     Q) swiftui hide keyboard
-//                     https://stackoverflow.com/questions/56491386/how-to-hide-keyboard-when-using-swiftui
-//                     */
-//                    let keyWindow = UIApplication.shared.connectedScenes
-//                        .filter({$0.activationState == .foregroundActive})
-//                        .map({$0 as? UIWindowScene})
-//                        .compactMap({$0})
-//                        .first?.windows
-//                        .filter({$0.isKeyWindow}).first
-//                    keyWindow?.endEditing(true)
-//                }
     }
 }
