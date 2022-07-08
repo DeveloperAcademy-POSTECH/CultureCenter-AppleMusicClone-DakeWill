@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A717A322872DB9C00D9D4E9 /* SearchListView.swift */; };
+		4A8E24472878050D003C25EA /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E24462878050D003C25EA /* SearchListViewModel.swift */; };
 		DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0234FD286978AD009E9C76 /* AppleMusicCloneApp.swift */; };
 		DF023502286978AF009E9C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF023501286978AF009E9C76 /* Assets.xcassets */; };
 		DF023505286978AF009E9C76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF023504286978AF009E9C76 /* Preview Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A717A322872DB9C00D9D4E9 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		4A8E24462878050D003C25EA /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchListViewModel.swift; path = AppleMusicClone/Views/SearchListViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DF0234FA286978AD009E9C76 /* AppleMusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0234FD286978AD009E9C76 /* AppleMusicCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicCloneApp.swift; sourceTree = "<group>"; };
 		DF023501286978AF009E9C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				DF02351028697F72009E9C76 /* RadioView.swift */,
 				DF02351428697FB9009E9C76 /* LibraryView.swift */,
 				DF02351228697F9A009E9C76 /* SearchView.swift */,
+				4A717A322872DB9C00D9D4E9 /* SearchListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		DF02350D28697EFE009E9C76 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4A8E24462878050D003C25EA /* SearchListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 			files = (
 				DF02351328697F9A009E9C76 /* SearchView.swift in Sources */,
 				DF02351128697F72009E9C76 /* RadioView.swift in Sources */,
+				4A8E24472878050D003C25EA /* SearchListViewModel.swift in Sources */,
 				DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */,
 				DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */,
 				DF02351728697FE8009E9C76 /* ListenNowView.swift in Sources */,
+				4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */,
 				DF02350F28697F50009E9C76 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +245,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -291,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -309,7 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = DF85MB57QP;
+				DEVELOPMENT_TEAM = JP5BCXZWJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;
@@ -340,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = DF85MB57QP;
+				DEVELOPMENT_TEAM = JP5BCXZWJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;
