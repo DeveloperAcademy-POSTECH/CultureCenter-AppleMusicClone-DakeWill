@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     @State var searchText: String = ""
+    @State private var isPicked: SearchPick = .AppleMusic
+
     @State private var albums: MusicItemCollection<Album> = []
     
     var body: some View {
@@ -27,9 +29,9 @@ struct SearchView: View {
                     }
                 }
             }
-            .navigationTitle("Search")
-            .navigationBarTitleDisplayMode(.large)
         }
+
+        SearchListView(searchText: $searchText)
         .searchable(text: $searchText,
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "아티스트, 노래, 가사 등")
