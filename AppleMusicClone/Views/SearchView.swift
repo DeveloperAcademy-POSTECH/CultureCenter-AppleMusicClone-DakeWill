@@ -14,7 +14,6 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack{
-                
                 SearchListView(searchText: $searchText)
                     .searchable(text: $searchText,
                                 placement: .navigationBarDrawer(displayMode: .always),

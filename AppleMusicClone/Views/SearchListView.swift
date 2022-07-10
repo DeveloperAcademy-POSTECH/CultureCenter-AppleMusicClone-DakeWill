@@ -15,21 +15,16 @@ enum SearchPick: String, CaseIterable {
 }
 
 struct SearchListView: View {
-    
-    @ObservedObject var viewModel = SearchListViewModel()
-    
+    @Environment(\.isSearching) var isSearching
+    @ObservedObject var searchViewModel = SearchListViewModel()
     @Binding var searchText: String
-    
     @State var songs: MusicItemCollection<Artist> = []
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
     
-    @Environment(\.isSearching) var isSearching
-    
     var body: some View {
         VStack{
-        
             if isSearching {
                 Picker("", selection: $isPicked) {
                     ForEach(SearchPick.allCases, id: \.self) {
@@ -39,14 +34,9 @@ struct SearchListView: View {
                 .pickerStyle(.segmented)
                 .frame(width: UIScreen.main.bounds.width * 0.88)
             }
-            
             List(songs) { song in
-                
                 if !songs.isEmpty {
                     HStack {
-                        //                        ArtworkImage(song.artwork!, width: 75)
-                        //                        Color(song.artwork?.backgroundColor ?? ".black" as! CGColor)
-                        //                        Text(song.artwork?.alternateText ?? "none")
                         VStack (alignment: .leading) {
                             Text(song.name)
                                 .lineLimit(1)
@@ -54,12 +44,6 @@ struct SearchListView: View {
                             ForEach(song.genreNames ?? [""], id:\.self) { genre in
                                 Text(genre)
                             }
-                            //                            Text(song.artistName)
-                            //                                .lineLimit(1)
-                            //                                .foregroundColor(.secondary)
-                        }
-                        .onTapGesture {
-                            //                        viewModel.storeRecentlySearched(album: song)
                         }
                     }
                     .padding()
