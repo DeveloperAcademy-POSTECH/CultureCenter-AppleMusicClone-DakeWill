@@ -10,14 +10,15 @@ import SwiftUI
 struct SearchView: View {
     @State var searchText: String = ""
     @State private var isPicked: SearchPick = .AppleMusic
+    
     var body: some View {
         NavigationView {
             VStack{
+                
                 SearchListView(searchText: $searchText)
                     .searchable(text: $searchText,
                                 placement: .navigationBarDrawer(displayMode: .always),
                                 prompt: "search")
-                
             }
         }
     }

@@ -24,53 +24,52 @@ struct SearchListView: View {
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
+    
     @Environment(\.isSearching) var isSearching
     
     var body: some View {
-        List(songs) { song in
+        VStack{
+        
+            if isSearching {
+                Picker("", selection: $isPicked) {
+                    ForEach(SearchPick.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .frame(width: UIScreen.main.bounds.width * 0.88)
+            }
             
-            if !songs.isEmpty {
-                HStack {
-                    //                        ArtworkImage(song.artwork!, width: 75)
-                    //                        Color(song.artwork?.backgroundColor ?? ".black" as! CGColor)
-                    //                        Text(song.artwork?.alternateText ?? "none")
-                    VStack (alignment: .leading) {
-                        Text(song.name)
-                            .lineLimit(1)
-                            .foregroundColor(.primary)
-                        ForEach(song.genreNames ?? [""], id:\.self) { genre in
-                            Text(genre)
-                        }
-                        //                            Text(song.artistName)
-                        //                                .lineLimit(1)
-                        //                                .foregroundColor(.secondary)
-                    }
-                    .onTapGesture {
-//                        viewModel.storeRecentlySearched(album: song)
-                    }
-                }
-                .padding()
-            }
-        }
-        .navigationTitle("Search")
-        .navigationBarTitleDisplayMode(.large)
-        .onChange(of: searchText,
-                  perform: requestUpdatedSearchResults
-        )
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack{
-                    if isSearching {
-                        Picker("", selection: $isPicked) {
-                            ForEach(SearchPick.allCases, id: \.self) {
-                                Text($0.rawValue)
+            List(songs) { song in
+                
+                if !songs.isEmpty {
+                    HStack {
+                        //                        ArtworkImage(song.artwork!, width: 75)
+                        //                        Color(song.artwork?.backgroundColor ?? ".black" as! CGColor)
+                        //                        Text(song.artwork?.alternateText ?? "none")
+                        VStack (alignment: .leading) {
+                            Text(song.name)
+                                .lineLimit(1)
+                                .foregroundColor(.primary)
+                            ForEach(song.genreNames ?? [""], id:\.self) { genre in
+                                Text(genre)
                             }
+                            //                            Text(song.artistName)
+                            //                                .lineLimit(1)
+                            //                                .foregroundColor(.secondary)
                         }
-                        .pickerStyle(.segmented)
-                        .frame(width: UIScreen.main.bounds.width * 0.88)
+                        .onTapGesture {
+                            //                        viewModel.storeRecentlySearched(album: song)
+                        }
                     }
+                    .padding()
                 }
             }
+            .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.large)
+            .onChange(of: searchText,
+                      perform: requestUpdatedSearchResults
+            )
         }
     }
     

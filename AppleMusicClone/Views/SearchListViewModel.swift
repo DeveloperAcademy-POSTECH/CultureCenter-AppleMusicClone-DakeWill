@@ -12,7 +12,7 @@ class SearchListViewModel: ObservableObject {
     @Published var recentlySearched: [Album]?
     
     init() {
-        self.recentlySearched = UserDefaults.standard.object(forKey: "recentlySearched") as? [Album] ?? []
+        self.recentlySearched = UserDefaults.standard.object(forKey: "recentlySearched") as? [Album]
     }
     
     func storeRecentlySearched(album: Album) {
