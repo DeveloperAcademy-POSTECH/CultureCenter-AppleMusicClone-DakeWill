@@ -13,10 +13,17 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            List(albums) { album in
-                if !albums.isEmpty {
-                    VStack {
-                        ArtistCell(album: album)
+            VStack {
+                if albums.isEmpty {
+                    NoData()
+                }
+                else{
+                    List(albums) { album in
+                        if !albums.isEmpty {
+                            VStack {
+                                ArtistCell(album: album)
+                            }
+                        }
                     }
                 }
             }
@@ -57,7 +64,16 @@ struct SearchView: View {
             self.albums = searchResponse.albums
         }
     }
-    
+}
+
+struct NoData: View {
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("No Data")
+            Spacer()
+        }
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
