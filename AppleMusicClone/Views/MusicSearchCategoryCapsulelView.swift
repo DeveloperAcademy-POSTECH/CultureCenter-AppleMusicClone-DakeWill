@@ -22,10 +22,10 @@ struct MusicSearchCategoryCapsulelView: View {
                                 .foregroundColor(category.selected ?  Color(.systemPink) : Color(.clear))
                             Button(action: {
                                 Task {
-                                    var save = categories[ categories.firstIndex { $0.selected == true } ?? 0]
-                                    save = CategoryModel(id: save.id, categoryTitle: save.categoryTitle, selected: false)
+                                    var tempSaveCategory = categories[ categories.firstIndex { $0.selected == true } ?? 0]
+                                    tempSaveCategory = CategoryModel(id: tempSaveCategory.id, categoryTitle: tempSaveCategory.categoryTitle, selected: false)
                                     withAnimation {
-                                        categories[ categories.firstIndex { $0.selected == true } ?? 0] = save
+                                        categories[ categories.firstIndex { $0.selected == true } ?? 0] = tempSaveCategory
                                         categories[ categories.firstIndex { $0.categoryTitle == category.categoryTitle } ?? 0 ] = CategoryModel(id: category.id, categoryTitle: category.categoryTitle, selected: category.selected ? false : true)
                                     }
                                 }
@@ -38,7 +38,7 @@ struct MusicSearchCategoryCapsulelView: View {
                         .frame(width: CGFloat(category.categoryTitle.count * 15 + 20), height: 30)
                     }
                 }
-                .padding()
+//                .padding()
             }
         }
     }
