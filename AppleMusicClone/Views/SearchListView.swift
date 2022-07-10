@@ -35,7 +35,9 @@ struct SearchListView: View {
             List(albums) { album in
                 if !albums.isEmpty {
                     VStack {
-                        ArtistCell(album: album)
+                        NavigationLink(destination: AlbumDetailView(album: album)) {
+                            ArtistCell(album: album)
+                        }
                     }
                 }
             }
