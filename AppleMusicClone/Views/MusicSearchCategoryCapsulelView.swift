@@ -26,7 +26,7 @@ struct MusicSearchCategoryCapsulelView: View {
                                     tempSaveCategory = CategoryModel(id: tempSaveCategory.id, categoryTitle: tempSaveCategory.categoryTitle, selected: false)
                                     withAnimation {
                                         categories[ categories.firstIndex { $0.selected == true } ?? 0] = tempSaveCategory
-                                        categories[ categories.firstIndex { $0.categoryTitle == category.categoryTitle } ?? 0 ] = CategoryModel(id: category.id, categoryTitle: category.categoryTitle, selected: category.selected ? false : true)
+                                        categories[ categories.firstIndex { $0.categoryTitle == category.categoryTitle } ?? 0 ] = CategoryModel(id: category.id, categoryTitle: category.categoryTitle, selected: true)
                                     }
                                 }
                             }, label: {
