@@ -8,7 +8,6 @@
 import SwiftUI
 import MusicKit
 
-
 enum SearchPick: String, CaseIterable {
     case AppleMusic
     case storageBox
@@ -18,7 +17,6 @@ struct SearchListView: View {
     @Environment(\.isSearching) var isSearching
     @ObservedObject var searchViewModel = SearchListViewModel()
     @Binding var searchText: String
-    @State var songs: MusicItemCollection<Artist> = []
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
@@ -34,19 +32,11 @@ struct SearchListView: View {
                 .pickerStyle(.segmented)
                 .frame(width: UIScreen.main.bounds.width * 0.88)
             }
-            List(songs) { song in
-                if !songs.isEmpty {
-                    HStack {
-                        VStack (alignment: .leading) {
-                            Text(song.name)
-                                .lineLimit(1)
-                                .foregroundColor(.primary)
-                            ForEach(song.genreNames ?? [""], id:\.self) { genre in
-                                Text(genre)
-                            }
-                        }
+            List(albums) { album in
+                if !albums.isEmpty {
+                    VStack {
+                        ArtistCell(album: album)
                     }
-                    .padding()
                 }
             }
             .navigationTitle("Search")
@@ -57,12 +47,16 @@ struct SearchListView: View {
         }
     }
     
+    /*
+     request function from SampleCode of Musickit
+     https://developer.apple.com/documentation/musickit/using_musickit_to_integrate_with_apple_music
+     */
     private func requestUpdatedSearchResults(for searchText: String) {
         Task {
             do {
                 // Issue a catalog search request for albums matching the search term.
                 _ = await MusicAuthorization.request()
-                var searchRequest = MusicCatalogSearchRequest(term: searchText, types: [Artist.self])
+                var searchRequest = MusicCatalogSearchRequest(term: searchText, types: [Album.self])
                 searchRequest.limit = 10
                 let searchResponse = try await searchRequest.response()
                 // Update the user interface with the search response.
@@ -77,16 +71,6 @@ struct SearchListView: View {
     private func apply(_ searchResponse: MusicCatalogSearchResponse, for searchTerm: String) {
         if self.searchText == searchTerm {
             self.albums = searchResponse.albums
-            self.songs = searchResponse.artists
-            print(searchResponse.artists)
         }
     }
 }
-//
-//struct SearchListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchListView()
-//    }
-//}
-
-

@@ -38,7 +38,6 @@ struct MusicSearchCategoryCapsulelView: View {
                         .frame(width: CGFloat(category.categoryTitle.count * 15 + 20), height: 30)
                     }
                 }
-//                .padding()
             }
         }
     }

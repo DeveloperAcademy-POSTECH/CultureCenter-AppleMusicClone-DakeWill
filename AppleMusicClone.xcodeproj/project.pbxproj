@@ -193,11 +193,8 @@
 				DF02351328697F9A009E9C76 /* SearchView.swift in Sources */,
 				DFB8BB7B28773959001F9068 /* MusicSearchCategoryCapsulelView.swift in Sources */,
 				DF02351128697F72009E9C76 /* RadioView.swift in Sources */,
-
 				4A8E24472878050D003C25EA /* SearchListViewModel.swift in Sources */,
-
 				DF0C68EF28707FCC0015023E /* ArtistCell.swift in Sources */,
-
 				DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */,
 				DFCA21CF287A73FC0055232E /* Category.swift in Sources */,
 				DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */,
@@ -332,7 +329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = JP5BCXZWJP;
+				DEVELOPMENT_TEAM = DF85MB57QP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;
@@ -363,7 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = JP5BCXZWJP;
+				DEVELOPMENT_TEAM = DF85MB57QP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;
