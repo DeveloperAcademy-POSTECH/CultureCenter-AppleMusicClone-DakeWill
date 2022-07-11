@@ -13,5 +13,6 @@ struct AlbumDetailView: View {
     
     var body: some View {
         Text(album.title)
+        AlbumDetailTrackListView(album: album)
     }
 }
