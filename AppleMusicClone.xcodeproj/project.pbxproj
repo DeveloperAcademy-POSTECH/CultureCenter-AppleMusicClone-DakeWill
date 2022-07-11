@@ -21,6 +21,7 @@
 		DFB8BB7B28773959001F9068 /* MusicSearchCategoryCapsulelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8BB7A28773958001F9068 /* MusicSearchCategoryCapsulelView.swift */; };
 		DFCA21CF287A73FC0055232E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA21CE287A73FC0055232E /* Category.swift */; };
 		DFCA21D1287AC50D0055232E /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */; };
+		DFCA21D5287AD61D0055232E /* AlbumDetailUpperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA21D4287AD61D0055232E /* AlbumDetailUpperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DFB8BB7A28773958001F9068 /* MusicSearchCategoryCapsulelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchCategoryCapsulelView.swift; sourceTree = "<group>"; };
 		DFCA21CE287A73FC0055232E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
+		DFCA21D4287AD61D0055232E /* AlbumDetailUpperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailUpperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				DF0C68EE28707FCC0015023E /* ArtistCell.swift */,
 				DFB8BB7A28773958001F9068 /* MusicSearchCategoryCapsulelView.swift */,
 				DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */,
+				DFCA21D4287AD61D0055232E /* AlbumDetailUpperView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */,
 				DFCA21CF287A73FC0055232E /* Category.swift in Sources */,
 				DFCA21D1287AC50D0055232E /* AlbumDetailView.swift in Sources */,
+				DFCA21D5287AD61D0055232E /* AlbumDetailUpperView.swift in Sources */,
 				DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */,
 				DF02351728697FE8009E9C76 /* ListenNowView.swift in Sources */,
 				4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */,
