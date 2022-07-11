@@ -21,8 +21,10 @@ struct AlbumDetailUpperView: View {
                     .frame(width: 250, height: 250)
                     .cornerRadius(10)
                     .shadow(radius: 5)
-                ArtworkImage(album.artwork!, width: 250, height: 250)
-                    .cornerRadius(10)
+                if let artwork = album.artwork {
+                    ArtworkImage(artwork, width: 250, height: 250)
+                        .cornerRadius(10)
+                }
             }
             VStack(spacing: 5) {
                 Text(album.title)
