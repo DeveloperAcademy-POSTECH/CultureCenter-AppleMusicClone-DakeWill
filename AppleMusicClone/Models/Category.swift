@@ -15,7 +15,7 @@ struct CategoryModel: Identifiable {
 
 extension CategoryModel {
     static var list: [CategoryModel] = [
-        CategoryModel(categoryTitle: "인기 검색 결과", selected: false),
+        CategoryModel(categoryTitle: "인기 검색 결과", selected: true),
         CategoryModel(categoryTitle: "아티스트", selected: false),
         CategoryModel(categoryTitle: "앨범", selected: false),
         CategoryModel(categoryTitle: "노래", selected: false),
