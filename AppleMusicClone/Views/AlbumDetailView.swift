@@ -12,8 +12,6 @@ struct AlbumDetailView: View {
     var album: Album
     
     var body: some View {
-        AlbumDetailUpperView(album: album)
-        Text(album.title)
         AlbumDetailTrackListView(album: album)
     }
 }

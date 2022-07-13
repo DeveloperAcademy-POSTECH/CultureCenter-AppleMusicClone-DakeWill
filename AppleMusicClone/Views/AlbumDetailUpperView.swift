@@ -46,7 +46,9 @@ struct AlbumDetailUpperView: View {
                                 .opacity(0.4)
                             HStack {
                                 Image(systemName: "\(button.first ?? "")")
+                                    .foregroundColor(.accentColor)
                                 Text(button.last ?? "")
+                                    .foregroundColor(.accentColor)
                             }
                         }
                     })
@@ -57,9 +59,11 @@ struct AlbumDetailUpperView: View {
             ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                 Button(action: {}, label: {
                     Image(systemName: "plus")
+                        .foregroundColor(.accentColor)
                 })
                 Button(action: {}, label: {
                     Image(systemName: "ellipsis")
+                        .foregroundColor(.accentColor)
                 })
             })
         })
