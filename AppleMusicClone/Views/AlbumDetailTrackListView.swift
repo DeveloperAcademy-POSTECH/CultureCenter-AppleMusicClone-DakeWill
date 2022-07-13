@@ -9,18 +9,14 @@ import SwiftUI
 import MusicKit
 
 struct AlbumDetailTrackListView: View {
-    
     @ObservedObject var albumDetailViewModel = AlbumDetailViewModel()
     var album: Album
     
     var body: some View {
         List {
-            if let selectedAlbumTrack = albumDetailViewModel.selectedAlbumTrack {
-                ForEach(selectedAlbumTrack) { track in
+            ForEach(albumDetailViewModel.unwrapTrack(album: album)) { track in
                     HStack(spacing:10) {
-                        if let trackNumber = track.trackNumber {
-                            Text("\(trackNumber)")
-                        }
+                        Text("\(albumDetailViewModel.unwrapTrackNumber(track: track))")
                         Text(track.title)
                     }
                     .swipeActions(content: {
@@ -31,7 +27,6 @@ struct AlbumDetailTrackListView: View {
                         }
                     })
                 }
-            }
         }
         .listStyle(.plain)
         .onAppear {
