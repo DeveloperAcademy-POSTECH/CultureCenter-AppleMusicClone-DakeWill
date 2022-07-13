@@ -16,6 +16,7 @@ struct ArtistCell: View {
             HStack {
                 if let artwork = album.artwork {
                     ArtworkImage(artwork, width: 50)
+                        .cornerRadius(5)
                 } else {
                     Image(systemName: "square.stack")
                         .resizable()
@@ -33,7 +34,6 @@ struct ArtistCell: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
             }
         }
         .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
