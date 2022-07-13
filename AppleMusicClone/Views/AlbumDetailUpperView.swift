@@ -10,45 +10,43 @@ import MusicKit
 
 struct AlbumDetailUpperView: View {
     var album: Album
-    let playButton: [Int: [String]] = [0: ["play.fill", "음악"], 1: ["arrow.left.arrow.right", "임의재생"]]
-    let albumWidth = UIScreen.main.bounds.width / 2 - 30
-    let albumHeight = (UIScreen.main.bounds.width / 2 - 30) / 3 - 10
+    let cornerRadius: CGFloat = 10
+    let playButton: [[String]] = [["play.fill", "재생"], ["arrow.left.arrow.right", "임의재생"]]
+    let descriptionInset = EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25)
+    let rectanglePlayButtonWidth = UIScreen.main.bounds.width * 0.5 - 30
+    let rectanglePlayButtonHeight = (UIScreen.main.bounds.width * 0.5 - 30) * 0.33 - 10
+    let stackSpacing: CGFloat = 5
     
     var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            ZStack {
-                Rectangle()
-                    .frame(width: 250, height: 250)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
+        VStack(alignment: .center, spacing: stackSpacing) {
                 if let artwork = album.artwork {
                     ArtworkImage(artwork, width: 250, height: 250)
-                        .cornerRadius(10)
+                        .cornerRadius(cornerRadius)
+                        .shadow(radius: cornerRadius * 0.5)
                 }
-            }
-            VStack(spacing: 5) {
+            VStack(spacing: stackSpacing) {
                 Text(album.title)
                     .font(.headline)
                     .bold()
                 Text(album.artistName)
                     .foregroundColor(.accentColor)
             }
-            .padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 25))
+            .padding(descriptionInset)
             Text("\(album.genreNames.first ?? "") · \(returnYear(date: album.releaseDate ?? Date()))년")
                 .font(.footnote)
                 .foregroundColor(.secondary)
             HStack {
-                ForEach(playButton.sorted { $0.key < $1.key }, id: \.key){ button in
+                ForEach(playButton, id: \.self){ button in
                     Button(action: {}, label: {
                         ZStack {
                             Rectangle()
-                                .frame(width: albumWidth, height: albumHeight)
-                                .cornerRadius(10)
+                                .frame(width: rectanglePlayButtonWidth, height: rectanglePlayButtonHeight)
+                                .cornerRadius(cornerRadius)
                                 .foregroundColor(Color(.darkGray))
                                 .opacity(0.4)
                             HStack {
-                                Image(systemName: "\(button.value.first ?? "")")
-                                Text(button.value.last ?? "")
+                                Image(systemName: "\(button.first ?? "")")
+                                Text(button.last ?? "")
                             }
                         }
                     })
@@ -56,14 +54,14 @@ struct AlbumDetailUpperView: View {
             }
         }
         .toolbar(content: {
-            HStack {
+            ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                 Button(action: {}, label: {
-                    Image(systemName: "arrow.down.circle")
+                    Image(systemName: "plus")
                 })
                 Button(action: {}, label: {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: "ellipsis")
                 })
-            }
+            })
         })
     }
     
