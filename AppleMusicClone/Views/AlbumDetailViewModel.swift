@@ -27,5 +27,6 @@ class AlbumDetailViewModel: ObservableObject {
         guard let trackNumber = track.trackNumber else { return 0 }
         return trackNumber
     }
+    
 }
 

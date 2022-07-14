@@ -9,9 +9,13 @@ import SwiftUI
 import MusicKit
 
 struct AlbumDetailView: View {
+    @ObservedObject var albumDetailViewModel = AlbumDetailViewModel()
     var album: Album
     
     var body: some View {
-        AlbumDetailTrackListView(album: album)
+        AlbumDetailTrackListView(albumDetailViewModel: albumDetailViewModel, album: album)
+            .task {
+                albumDetailViewModel.fetchAlbumTrack(album: album)
+            }
     }
 }

@@ -11,12 +11,26 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class FirebaseManager: NSObject {
-    let firestore: Firestore
-    
     static let shared = FirebaseManager()
+    let firestore: Firestore
     
     override init() {
         firestore = Firestore.firestore()
         super.init()
+    }
+    
+    private var documentListener: ListenerRegistration?
+    
+    func save(_ message: Message, completion: ((Error?) -> Void)? = nil) {
+        let collectionPath = "channels/\(message.id)/thread"
+        let collectionListener = Firestore.firestore().collection(collectionPath)
+        
+        guard let dictionary = message.asDictionary else {
+            print("decode error")
+            return
+        }
+        collectionListener.addDocument(data: dictionary) { error in
+            completion?(error)
+        }
     }
 }
