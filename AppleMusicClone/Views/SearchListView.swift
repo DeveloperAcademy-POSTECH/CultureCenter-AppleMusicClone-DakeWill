@@ -20,6 +20,7 @@ struct SearchListView: View {
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
+    @State var isActive: Bool = false
     
     var body: some View {
         VStack{
@@ -34,11 +35,15 @@ struct SearchListView: View {
             }
             List(albums) { album in
                 if !albums.isEmpty {
-                    VStack {
-                        NavigationLink(destination: AlbumDetailView(album: album)) {
-                            ArtistCell(album: album)
-                        }
-                    }
+                    Button(action: {
+                        isActive.toggle()
+                    }, label: {
+                        ArtistCell(album: album)
+                    }).background(
+                        NavigationLink(destination: AlbumDetailView(album: album), isActive: $isActive) {
+                            EmptyView()
+                        }.hidden()
+                    )
                 }
             }
             .navigationTitle("Search")
@@ -62,7 +67,7 @@ struct SearchListView: View {
                 searchRequest.limit = 10
                 let searchResponse = try await searchRequest.response()
                 // Update the user interface with the search response.
-                await self.apply(searchResponse, for: searchText)
+                self.apply(searchResponse, for: searchText)
             } catch {
                 print("Search request failed with error: \(error).")
             }

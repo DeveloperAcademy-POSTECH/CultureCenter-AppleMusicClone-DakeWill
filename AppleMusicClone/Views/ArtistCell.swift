@@ -34,6 +34,7 @@ struct ArtistCell: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
+                Image(systemName: "chevron.right")
             }
         }
         .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))

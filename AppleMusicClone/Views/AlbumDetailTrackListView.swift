@@ -17,7 +17,6 @@ struct AlbumDetailTrackListView: View {
             AlbumDetailUpperView(albumDetailViewModel: albumDetailViewModel, album: album)
                 .buttonStyle(.plain)
                 .listRowSeparator(.hidden)
-            
             ForEach(albumDetailViewModel.unwrapTrack(album: album)) { track in
                     HStack(spacing:10) {
                         Text("\(albumDetailViewModel.unwrapTrackNumber(track: track))")
