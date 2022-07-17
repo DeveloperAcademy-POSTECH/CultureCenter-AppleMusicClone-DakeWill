@@ -15,7 +15,7 @@ enum SearchPick: String, CaseIterable {
 
 struct SearchListView: View {
     @Environment(\.isSearching) var isSearching
-    @ObservedObject var searchViewModel = SearchListViewModel()
+    @ObservedObject var searchViewModel: SearchViewModel
     @Binding var searchText: String
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
@@ -32,26 +32,41 @@ struct SearchListView: View {
                 }
                 .pickerStyle(.segmented)
                 .frame(width: UIScreen.main.bounds.width * 0.88)
-            }
-            List(albums) { album in
-                if !albums.isEmpty {
-                    Button(action: {
-                        selectedItem = albums.firstIndex(of: album)
-                        
-                    }, label: {
-                        ArtistCell(album: album)
-                    }).background(
-                        NavigationLink(destination: AlbumDetailView(album: album), tag: albums.firstIndex(of: album) ?? 0, selection: $selectedItem) {
-                            EmptyView()
-                        }.hidden()
-                    )
+                if searchText == "" {
+                    List {
+                        HStack {
+                            Text("최근 검색한 항목")
+                            Spacer()
+                            Text("지우기")
+                                .foregroundColor(.accentColor)
+                        }
+                        ForEach(searchViewModel.recentlySearchedAlbum, id:\.self) { album in
+                            CustomAlbumCell(album: album)
+                        }
+                    }
+                } else {
+                    List(albums) { album in
+                        Button(action: {
+                            selectedItem = albums.firstIndex(of: album)
+                        }, label: {
+                            ArtistCell(album: album)
+                        }).background(
+                            NavigationLink(destination: AlbumDetailView(album: album), tag: albums.firstIndex(of: album) ?? 0, selection: $selectedItem) {
+                                EmptyView()
+                            }.hidden()
+                        )
+                    }
                 }
             }
-            .navigationTitle("Search")
-            .navigationBarTitleDisplayMode(.large)
-            .onChange(of: searchText,
-                      perform: requestUpdatedSearchResults
-            )
+            
+        }
+        .navigationTitle("Search")
+        .navigationBarTitleDisplayMode(.large)
+        .onChange(of: searchText,
+                  perform: requestUpdatedSearchResults
+        )
+        .onAppear {
+            searchViewModel.fetchRecentlySearchedList()
         }
     }
     

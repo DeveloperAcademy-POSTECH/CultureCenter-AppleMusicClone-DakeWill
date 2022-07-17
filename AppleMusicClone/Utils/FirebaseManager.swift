@@ -14,6 +14,7 @@ class FirebaseManager: NSObject {
     static let shared = FirebaseManager()
     let firestore: Firestore
     
+    
     override init() {
         firestore = Firestore.firestore()
         super.init()

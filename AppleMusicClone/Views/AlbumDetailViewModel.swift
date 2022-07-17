@@ -24,7 +24,7 @@ class AlbumDetailViewModel: ObservableObject {
                                                     track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks), artwork: album.artwork!,
                                                     artistName: album.artistName,
                                                     genre: album.genreNames.first!))
-                print("저장되었씁니다.")
+                print("저장되었습니다.")
             }
         }
     }
@@ -38,6 +38,5 @@ class AlbumDetailViewModel: ObservableObject {
         guard let trackNumber = track.trackNumber else { return 0 }
         return trackNumber
     }
-    
 }
 

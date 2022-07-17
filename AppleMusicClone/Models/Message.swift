@@ -9,7 +9,7 @@ import Foundation
 import MusicKit
 
 // Reference : https://ios-development.tistory.com/771
-struct Message: Codable {
+struct Message: Hashable, Codable {
     let id: String
     let content: String
     let sentDate: Date
@@ -55,6 +55,10 @@ struct Message: Codable {
         sentDate = Date(timeIntervalSince1970: dataDouble)
         let trackArray = try values.decode(MusicTrack.self, forKey: .track)
         track = trackArray
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 
