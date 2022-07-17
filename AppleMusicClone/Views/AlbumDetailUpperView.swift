@@ -10,7 +10,6 @@ import MusicKit
 
 struct AlbumDetailUpperView: View {
     @ObservedObject var albumDetailViewModel: AlbumDetailViewModel
-    @State var tracks: [String] = []
     var album: Album
     let cornerRadius: CGFloat = 10
     let playButton: [[String]] = [["play.fill", "재생"], ["arrow.left.arrow.right", "임의재생"]]
@@ -72,17 +71,8 @@ struct AlbumDetailUpperView: View {
             })
         }
         .onAppear {
-            if let trackArray = albumDetailViewModel.selectedAlbumTracks {
-                for trackName in trackArray {
-                    tracks.append(trackName.title)
-                }
+            
             }
-            FirebaseManager.shared.save(Message(id: album.title,
-                                                content: album.title,
-                                                track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks), artwork: album.artwork!,
-                                                artistName: album.artistName,
-                                                genre: album.genreNames.first!))
-        }
         .toolbar(content: {
             ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                 Button(action: {}, label: {

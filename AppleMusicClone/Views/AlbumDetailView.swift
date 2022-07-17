@@ -11,7 +11,6 @@ import MusicKit
 struct AlbumDetailView: View {
     @ObservedObject var albumDetailViewModel = AlbumDetailViewModel()
     var album: Album
-    
     var body: some View {
         AlbumDetailTrackListView(albumDetailViewModel: albumDetailViewModel, album: album)
             .task {

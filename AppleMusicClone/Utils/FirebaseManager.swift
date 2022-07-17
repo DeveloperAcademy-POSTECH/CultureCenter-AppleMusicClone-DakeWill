@@ -22,7 +22,7 @@ class FirebaseManager: NSObject {
     private var documentListener: ListenerRegistration?
     
     func save(_ message: Message, completion: ((Error?) -> Void)? = nil) {
-        let collectionPath = "channels/\(message.id)/thread"
+        let collectionPath = "albums"
         let collectionListener = Firestore.firestore().collection(collectionPath)
         
         guard let dictionary = message.asDictionary else {
@@ -32,9 +32,5 @@ class FirebaseManager: NSObject {
         collectionListener.addDocument(data: dictionary) { error in
             completion?(error)
         }
-    }
-    
-    func fetchRecentlySearchedList() {
-        
     }
 }
