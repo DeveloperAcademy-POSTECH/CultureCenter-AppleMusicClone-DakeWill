@@ -33,4 +33,8 @@ class FirebaseManager: NSObject {
             completion?(error)
         }
     }
+    
+    func fetchRecentlySearchedList() {
+        
+    }
 }

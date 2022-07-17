@@ -21,7 +21,7 @@ struct SearchListView: View {
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
     @State var isActive: Bool = false
-    
+    @State var selectedItem: Int?
     var body: some View {
         VStack{
             if isSearching {
@@ -36,11 +36,12 @@ struct SearchListView: View {
             List(albums) { album in
                 if !albums.isEmpty {
                     Button(action: {
-                        isActive.toggle()
+                        selectedItem = albums.firstIndex(of: album)
+                        
                     }, label: {
                         ArtistCell(album: album)
                     }).background(
-                        NavigationLink(destination: AlbumDetailView(album: album), isActive: $isActive) {
+                        NavigationLink(destination: AlbumDetailView(album: album), tag: albums.firstIndex(of: album) ?? 0, selection: $selectedItem) {
                             EmptyView()
                         }.hidden()
                     )
