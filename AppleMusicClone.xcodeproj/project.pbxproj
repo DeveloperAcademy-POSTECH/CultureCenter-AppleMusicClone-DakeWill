@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A5DF95F288439CA005DB201 /* CustomAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF95E288439CA005DB201 /* CustomAlbum.swift */; };
 		4A5DF961288444FB005DB201 /* CustomAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF960288444FB005DB201 /* CustomAlbumCell.swift */; };
 		4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A717A322872DB9C00D9D4E9 /* SearchListView.swift */; };
 		4A8E24472878050D003C25EA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E24462878050D003C25EA /* SearchViewModel.swift */; };
@@ -36,7 +35,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A5DF95E288439CA005DB201 /* CustomAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlbum.swift; sourceTree = "<group>"; };
 		4A5DF960288444FB005DB201 /* CustomAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlbumCell.swift; sourceTree = "<group>"; };
 		4A717A322872DB9C00D9D4E9 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		4A8E24462878050D003C25EA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = AppleMusicClone/Views/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -123,7 +121,6 @@
 				DFCA21CE287A73FC0055232E /* Category.swift */,
 				DF50564B28801AC300E6F8AA /* Message.swift */,
 				DF50564D28805C4A00E6F8AA /* MusicTrack.swift */,
-				4A5DF95E288439CA005DB201 /* CustomAlbum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,7 +261,6 @@
 				4ADBEC41287C38E90048CADA /* AlbumDetailViewModel.swift in Sources */,
 				DFCA21CF287A73FC0055232E /* Category.swift in Sources */,
 				DFCA21D1287AC50D0055232E /* AlbumDetailView.swift in Sources */,
-				4A5DF95F288439CA005DB201 /* CustomAlbum.swift in Sources */,
 				DFCA21D5287AD61D0055232E /* AlbumDetailUpperView.swift in Sources */,
 				DF02351528697FB9009E9C76 /* LibraryView.swift in Sources */,
 				DF505645287EB9EF00E6F8AA /* FirebaseManager.swift in Sources */,
