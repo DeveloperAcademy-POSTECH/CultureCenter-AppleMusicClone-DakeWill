@@ -16,22 +16,28 @@ enum SearchPick: String, CaseIterable {
 struct SearchListView: View {
     @Environment(\.isSearching) var isSearching
     @ObservedObject var searchViewModel: SearchViewModel
-    @Binding var searchText: String
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
     @State var isActive: Bool = false
     @State var selectedItem: Int?
+    @Binding var searchText: String
+    @Binding var isSearchd: Bool
     var body: some View {
         VStack{
             if isSearching {
-                Picker("", selection: $isPicked) {
-                    ForEach(SearchPick.allCases, id: \.self) {
-                        Text($0.rawValue)
+                if isSearchd {
+                    MusicSearchCategoryCapsulelView()
+                        .frame(width: UIScreen.main.bounds.width * 0.88)
+                } else {
+                    Picker("", selection: $isPicked) {
+                        ForEach(SearchPick.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
                     }
+                    .pickerStyle(.segmented)
+                    .frame(width: UIScreen.main.bounds.width * 0.88)
                 }
-                .pickerStyle(.segmented)
-                .frame(width: UIScreen.main.bounds.width * 0.88)
                 if searchText == "" {
                     List {
                         HStack {
@@ -58,12 +64,14 @@ struct SearchListView: View {
                     }
                 }
             }
-            
         }
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.large)
         .onChange(of: searchText,
-                  perform: requestUpdatedSearchResults
+                  perform: { newValue in
+            requestUpdatedSearchResults(for: newValue)
+            self.isSearchd = false
+        }
         )
         .onAppear {
             searchViewModel.fetchRecentlySearchedList()
