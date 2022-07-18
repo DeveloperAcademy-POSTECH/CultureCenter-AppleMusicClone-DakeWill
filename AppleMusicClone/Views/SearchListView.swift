@@ -40,7 +40,7 @@ struct SearchListView: View {
                             Text("지우기")
                                 .foregroundColor(.accentColor)
                         }
-                        ForEach(searchViewModel.recentlySearchedAlbum, id:\.self) { album in
+                        ForEach(searchViewModel.recentlySearchedAlbum.sorted(by: {$0.sentDate > $1.sentDate}), id:\.self) { album in
                             CustomAlbumCell(album: album)
                         }
                     }

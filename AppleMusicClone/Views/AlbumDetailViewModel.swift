@@ -21,7 +21,8 @@ class AlbumDetailViewModel: ObservableObject {
                 }
                 FirebaseManager.shared.save(Message(id: album.title,
                                                     content: album.title,
-                                                    track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks), artwork: album.artwork!,
+                                                    track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks),
+                                                    artwork: album.artwork!,
                                                     artistName: album.artistName,
                                                     genre: album.genreNames.first!))
                 print("저장되었습니다.")
@@ -39,4 +40,3 @@ class AlbumDetailViewModel: ObservableObject {
         return trackNumber
     }
 }
-
