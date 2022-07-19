@@ -20,7 +20,7 @@ class SearchViewModel: ObservableObject {
                       guard let element = try? document.data(as: Message.self) else { return }
                       self.recentlySearchedAlbum.append(element)
                   }
-            let set = Set(self.recentlySearchedAlbum)
+            let set = Set(self.recentlySearchedAlbum).sorted(by: {$0.sentDate > $1.sentDate})
             self.recentlySearchedAlbum = Array(set)
                   print("최근fetch완료")
         }

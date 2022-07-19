@@ -55,24 +55,7 @@ struct AlbumDetailUpperView: View {
                     })
                 }
             }
-            Button(action: {
-//                if let trackArray = albumDetailViewModel.selectedAlbumTracks {
-//                    for trackName in trackArray {
-//                        tracks.append(trackName.title)
-//                    }
-//                }
-//                FirebaseManager.shared.save(Message(id: album.title,
-//                                                    content: album.title,
-//                                                    track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks), artwork: album.artwork!,
-//                                                    artistName: album.artistName,
-//                                                    genre: album.genreNames.first!))
-            }, label: {
-                Text("Save")
-            })
         }
-        .onAppear {
-            
-            }
         .toolbar(content: {
             ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                 Button(action: {}, label: {

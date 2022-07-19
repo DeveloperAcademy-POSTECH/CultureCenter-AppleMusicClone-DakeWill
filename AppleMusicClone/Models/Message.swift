@@ -27,7 +27,6 @@ struct Message: Hashable, Codable {
         self.artwork = artwork
         self.artistName = artistName
         self.genre = genre
-//        self.releaseDate = releaseDate
     }
     
     // MARK: - Date 형을 firestore에 입력하면 Unix Time Stamp형으로 변환하는 작업
@@ -40,7 +39,6 @@ struct Message: Hashable, Codable {
         case artwork
         case artistName
         case genre
-//        case releaseDate
     }
     
     init(from decoder: Decoder) throws {
