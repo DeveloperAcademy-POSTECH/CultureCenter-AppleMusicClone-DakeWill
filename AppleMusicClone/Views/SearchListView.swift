@@ -15,37 +15,66 @@ enum SearchPick: String, CaseIterable {
 
 struct SearchListView: View {
     @Environment(\.isSearching) var isSearching
-    @ObservedObject var searchViewModel = SearchListViewModel()
-    @Binding var searchText: String
+    @ObservedObject var searchViewModel: SearchViewModel
     @State private var albums: MusicItemCollection<Album> = []
     @State private var isPicked: SearchPick = .AppleMusic
     @State private var recentlySearched: [Album] = []
-    
+    @State var isActive: Bool = false
+    @State var selectedItem: Int?
+    @Binding var searchText: String
+    @Binding var isSearchd: Bool
     var body: some View {
         VStack{
             if isSearching {
-                Picker("", selection: $isPicked) {
-                    ForEach(SearchPick.allCases, id: \.self) {
-                        Text($0.rawValue)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .frame(width: UIScreen.main.bounds.width * 0.88)
-            }
-            List(albums) { album in
-                if !albums.isEmpty {
-                    VStack {
-                        NavigationLink(destination: AlbumDetailView(album: album)) {
-                            ArtistCell(album: album)
+                if isSearchd {
+                    MusicSearchCategoryCapsulelView()
+                        .frame(width: UIScreen.main.bounds.width * 0.88)
+                } else {
+                    Picker("", selection: $isPicked) {
+                        ForEach(SearchPick.allCases, id: \.self) {
+                            Text($0.rawValue)
                         }
                     }
+                    .pickerStyle(.segmented)
+                    .frame(width: UIScreen.main.bounds.width * 0.88)
+                }
+                if searchText == "" {
+                    List {
+                        HStack {
+                            Text("최근 검색한 항목")
+                            Spacer()
+                            Text("지우기")
+                                .foregroundColor(.accentColor)
+                        }
+                        ForEach(searchViewModel.recentlySearchedAlbum, id:\.self) { album in
+                            CustomAlbumCell(album: album)
+                        }
+                    }
+                } else {
+                    List(albums) { album in
+                        Button(action: {
+                            selectedItem = albums.firstIndex(of: album)
+                        }, label: {
+                            ArtistCell(album: album)
+                        }).background(
+                            NavigationLink(destination: AlbumDetailView(album: album), tag: albums.firstIndex(of: album) ?? 0, selection: $selectedItem) {
+                                EmptyView()
+                            }.hidden()
+                        )
+                    }
                 }
             }
-            .navigationTitle("Search")
-            .navigationBarTitleDisplayMode(.large)
-            .onChange(of: searchText,
-                      perform: requestUpdatedSearchResults
-            )
+        }
+        .navigationTitle("Search")
+        .navigationBarTitleDisplayMode(.large)
+        .onChange(of: searchText,
+                  perform: { newValue in
+            requestUpdatedSearchResults(for: newValue)
+            self.isSearchd = false
+        }
+        )
+        .onAppear {
+            searchViewModel.fetchRecentlySearchedList()
         }
     }
     
@@ -62,7 +91,7 @@ struct SearchListView: View {
                 searchRequest.limit = 10
                 let searchResponse = try await searchRequest.response()
                 // Update the user interface with the search response.
-                await self.apply(searchResponse, for: searchText)
+                self.apply(searchResponse, for: searchText)
             } catch {
                 print("Search request failed with error: \(error).")
             }

@@ -9,6 +9,7 @@ import SwiftUI
 import MusicKit
 
 struct AlbumDetailUpperView: View {
+    @ObservedObject var albumDetailViewModel: AlbumDetailViewModel
     var album: Album
     let cornerRadius: CGFloat = 10
     let playButton: [[String]] = [["play.fill", "재생"], ["arrow.left.arrow.right", "임의재생"]]

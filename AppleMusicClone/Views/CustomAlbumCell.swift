@@ -1,15 +1,15 @@
 //
-//  ArtistCell.swift
+//  CustomAlbumCell.swift
 //  AppleMusicClone
 //
-//  Created by 박성수 on 2022/07/02.
+//  Created by 최동권 on 2022/07/17.
 //
 
 import SwiftUI
 import MusicKit
 
-struct ArtistCell: View {
-    var album: MusicItemCollection<Album>.Element
+struct CustomAlbumCell: View {
+    var album: Message
     
     var body: some View {
         VStack {
@@ -24,7 +24,7 @@ struct ArtistCell: View {
                         .clipShape(Circle())
                 }
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(album.title)
+                    Text(album.content)
                         .lineLimit(1)
                         .font(.callout)
                         .foregroundColor(.primary)
@@ -40,3 +40,4 @@ struct ArtistCell: View {
         .padding(.init(top: 5, leading: 0, bottom: 5, trailing: 0))
     }
 }
+

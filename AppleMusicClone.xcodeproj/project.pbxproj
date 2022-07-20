@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A5DF961288444FB005DB201 /* CustomAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5DF960288444FB005DB201 /* CustomAlbumCell.swift */; };
 		4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A717A322872DB9C00D9D4E9 /* SearchListView.swift */; };
-		4A8E24472878050D003C25EA /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E24462878050D003C25EA /* SearchListViewModel.swift */; };
+		4A8E24472878050D003C25EA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E24462878050D003C25EA /* SearchViewModel.swift */; };
 		4ADBEC3F287C31D00048CADA /* AlbumDetailTrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBEC3E287C31D00048CADA /* AlbumDetailTrackListView.swift */; };
 		4ADBEC41287C38E90048CADA /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADBEC40287C38E90048CADA /* AlbumDetailViewModel.swift */; };
 		DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0234FD286978AD009E9C76 /* AppleMusicCloneApp.swift */; };
@@ -24,6 +25,9 @@
 		DF505641287EB84300E6F8AA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DF505640287EB84300E6F8AA /* FirebaseFirestore */; };
 		DF505643287EB84300E6F8AA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF505642287EB84300E6F8AA /* FirebaseFirestoreSwift */; };
 		DF505645287EB9EF00E6F8AA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF505644287EB9EF00E6F8AA /* FirebaseManager.swift */; };
+		DF50564A28800EC400E6F8AA /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF50564928800EC400E6F8AA /* Encodable+Extension.swift */; };
+		DF50564C28801AC300E6F8AA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF50564B28801AC300E6F8AA /* Message.swift */; };
+		DF50564E28805C4A00E6F8AA /* MusicTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF50564D28805C4A00E6F8AA /* MusicTrack.swift */; };
 		DFB8BB7B28773959001F9068 /* MusicSearchCategoryCapsulelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8BB7A28773958001F9068 /* MusicSearchCategoryCapsulelView.swift */; };
 		DFCA21CF287A73FC0055232E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA21CE287A73FC0055232E /* Category.swift */; };
 		DFCA21D1287AC50D0055232E /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */; };
@@ -31,8 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A5DF960288444FB005DB201 /* CustomAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlbumCell.swift; sourceTree = "<group>"; };
 		4A717A322872DB9C00D9D4E9 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
-		4A8E24462878050D003C25EA /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchListViewModel.swift; path = AppleMusicClone/Views/SearchListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4A8E24462878050D003C25EA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = AppleMusicClone/Views/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		4ADBEC3E287C31D00048CADA /* AlbumDetailTrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailTrackListView.swift; sourceTree = "<group>"; };
 		4ADBEC40287C38E90048CADA /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumDetailViewModel.swift; path = AppleMusicClone/Views/AlbumDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DF0234FA286978AD009E9C76 /* AppleMusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +53,9 @@
 		DF0C68EE28707FCC0015023E /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		DF50563D287EB77700E6F8AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF505644287EB9EF00E6F8AA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		DF50564928800EC400E6F8AA /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		DF50564B28801AC300E6F8AA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DF50564D28805C4A00E6F8AA /* MusicTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTrack.swift; sourceTree = "<group>"; };
 		DFB8BB7A28773958001F9068 /* MusicSearchCategoryCapsulelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchCategoryCapsulelView.swift; sourceTree = "<group>"; };
 		DFCA21CE287A73FC0055232E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -111,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				DFCA21CE287A73FC0055232E /* Category.swift */,
+				DF50564B28801AC300E6F8AA /* Message.swift */,
+				DF50564D28805C4A00E6F8AA /* MusicTrack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 				DFCA21D0287AC50D0055232E /* AlbumDetailView.swift */,
 				4ADBEC3E287C31D00048CADA /* AlbumDetailTrackListView.swift */,
 				DFCA21D4287AD61D0055232E /* AlbumDetailUpperView.swift */,
+				4A5DF960288444FB005DB201 /* CustomAlbumCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,7 +147,7 @@
 		DF02350D28697EFE009E9C76 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4A8E24462878050D003C25EA /* SearchListViewModel.swift */,
+				4A8E24462878050D003C25EA /* SearchViewModel.swift */,
 				4ADBEC40287C38E90048CADA /* AlbumDetailViewModel.swift */,
 			);
 			path = ViewModels;
@@ -145,9 +156,18 @@
 		DF505646287EB9F500E6F8AA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DF50564F288063C400E6F8AA /* Extensions */,
 				DF505644287EB9EF00E6F8AA /* FirebaseManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DF50564F288063C400E6F8AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DF50564928800EC400E6F8AA /* Encodable+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +250,11 @@
 			files = (
 				DF02351328697F9A009E9C76 /* SearchView.swift in Sources */,
 				DFB8BB7B28773959001F9068 /* MusicSearchCategoryCapsulelView.swift in Sources */,
+				DF50564A28800EC400E6F8AA /* Encodable+Extension.swift in Sources */,
+				4A5DF961288444FB005DB201 /* CustomAlbumCell.swift in Sources */,
+				DF50564C28801AC300E6F8AA /* Message.swift in Sources */,
 				DF02351128697F72009E9C76 /* RadioView.swift in Sources */,
-				4A8E24472878050D003C25EA /* SearchListViewModel.swift in Sources */,
+				4A8E24472878050D003C25EA /* SearchViewModel.swift in Sources */,
 				4ADBEC3F287C31D00048CADA /* AlbumDetailTrackListView.swift in Sources */,
 				DF0C68EF28707FCC0015023E /* ArtistCell.swift in Sources */,
 				DF0234FE286978AD009E9C76 /* AppleMusicCloneApp.swift in Sources */,
@@ -243,6 +266,7 @@
 				DF505645287EB9EF00E6F8AA /* FirebaseManager.swift in Sources */,
 				DF02351728697FE8009E9C76 /* ListenNowView.swift in Sources */,
 				4A717A332872DB9C00D9D4E9 /* SearchListView.swift in Sources */,
+				DF50564E28805C4A00E6F8AA /* MusicTrack.swift in Sources */,
 				DF02350F28697F50009E9C76 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +396,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = DF85MB57QP;
+				DEVELOPMENT_TEAM = JP5BCXZWJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;
@@ -403,7 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleMusicClone/Preview Content\"";
-				DEVELOPMENT_TEAM = DF85MB57QP;
+				DEVELOPMENT_TEAM = JP5BCXZWJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleMusicClone/Info.plist;

@@ -10,11 +10,23 @@ import MusicKit
 
 class AlbumDetailViewModel: ObservableObject {
     @Published var selectedAlbumTracks: MusicItemCollection<Track>?
-    
+    @Published var tracks: [String] = []
     func fetchAlbumTrack(album: Album) {
         Task {
             let albumWithTrack = try await album.with([.tracks])
             self.selectedAlbumTracks = albumWithTrack.tracks
+            if let trackArray = self.selectedAlbumTracks {
+                for trackName in trackArray {
+                    tracks.append(trackName.title)
+                }
+                FirebaseManager.shared.save(Message(id: album.title,
+                                                    content: album.title,
+                                                    track: MusicTrack(trackNumber: album.trackCount, trackNames: tracks),
+                                                    artwork: album.artwork!,
+                                                    artistName: album.artistName,
+                                                    genre: album.genreNames.first!))
+                print("저장되었습니다.")
+            }
         }
     }
     
@@ -28,4 +40,3 @@ class AlbumDetailViewModel: ObservableObject {
         return trackNumber
     }
 }
-
